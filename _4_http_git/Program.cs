@@ -60,6 +60,9 @@ namespace _4_http_git
                                     Console.WriteLine("+ " + ctx.Request.Headers.AllKeys[i] + ": " + ctx.Request.Headers[ctx.Request.Headers.AllKeys[i]]);
                                 Console.WriteLine("\r\n| Response Headers | ");
                                 ctx.Response.Headers["Host"] = ctx.Request.Headers["Host"];
+                                ctx.Response.Headers["Status"] = "200";
+                                ctx.Response.Headers["Status-Text"] = "OK";
+                                ctx.Response.Headers["User-Agent"] = ctx.Request.Headers["User-Agent"];
                                 for (int i = 0; i < ctx.Response.Headers.AllKeys.Length; ++i)
                                     Console.WriteLine("+ " + ctx.Response.Headers.AllKeys[i] + ": " + ctx.Response.Headers[ctx.Response.Headers.AllKeys[i]]);
                                 byte[] buf;
